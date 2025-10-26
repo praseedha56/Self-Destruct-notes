@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyAfQF0OUb1LapIkbIXZUpvyq-apRkiDZSA",
+    authDomain: "self-destruct-notes-2d92d.firebaseapp.com",
+    projectId: "self-destruct-notes-2d92d",
+    storageBucket: "self-destruct-notes-2d92d.firebasestorage.app",
+    messagingSenderId: "340561308003",
+    appId: "1:340561308003:web:599751fe5d95a3702e4b56",
+    measurementId: "G-M8KE6MB8XJ"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-Destructing Notes App</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-Destructing Notes App</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    #login, #notes { max-width: 600px; margin: auto; }
+    #login { display: block; }
+    #notes { display: none; }
+    textarea { width: 100%; height: 300px; }
+    button { margin: 5px 5px 5px 0; padding: 8px 12px; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+<div id="login">
+  <h2>Login</h2>
+  <input type="password" id="password" placeholder="Enter any password" />
+  <button id="loginBtn">Login</button>
+</div>
+
+<div id="notes">
+  <h2>Your Notes</h2>
+  <textarea id="noteArea" placeholder="Write your notes here..."></textarea><br />
+  <label for="destructTime">Destruct Time (seconds): </label>
+  <input type="number" id="destructTime" min="1" placeholder="Enter seconds" /><br />
+  <button id="setTimerBtn">Set Destruct Timer</button>
+  <button id="saveBtn">Save</button>
+  <button id="saveLogoutBtn">Save & Logout</button>
+  <button id="clearBtn">Clear</button>
+  <p id="timerStatus"></p>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
+
